@@ -45,8 +45,9 @@ namespace WindowsFormsApp1
             this.btn_previous = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.cvolume = new Siticone.Desktop.UI.WinForms.SiticoneTrackBar();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.cvolume = new System.Windows.Forms.TrackBar();
+            ((System.ComponentModel.ISupportInitialize)(this.cvolume)).BeginInit();
             this.SuspendLayout();
             // 
             // song
@@ -188,21 +189,19 @@ namespace WindowsFormsApp1
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // cvolume
-            // 
-            this.cvolume.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.cvolume.HoverState.Parent = this.cvolume;
-            this.cvolume.Location = new System.Drawing.Point(669, -2);
-            this.cvolume.MouseWheelBarPartitions = 20;
-            this.cvolume.Name = "cvolume";
-            this.cvolume.Size = new System.Drawing.Size(131, 32);
-            this.cvolume.TabIndex = 15;
-            this.cvolume.ThumbColor = System.Drawing.Color.LimeGreen;
-            this.cvolume.Scroll += new System.Windows.Forms.ScrollEventHandler(this.cvolume_Scroll);
-            // 
             // timer1
             // 
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // cvolume
+            // 
+            this.cvolume.AutoSize = false;
+            this.cvolume.Location = new System.Drawing.Point(669, -2);
+            this.cvolume.Maximum = 100;
+            this.cvolume.Name = "cvolume";
+            this.cvolume.Size = new System.Drawing.Size(131, 32);
+            this.cvolume.TabIndex = 14;
+            this.cvolume.TickStyle = System.Windows.Forms.TickStyle.None;
             // 
             // Form2
             // 
@@ -232,6 +231,7 @@ namespace WindowsFormsApp1
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Form2_MouseDown);
             this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Form2_MouseMove);
             this.MouseUp += new System.Windows.Forms.MouseEventHandler(this.Form2_MouseUp);
+            ((System.ComponentModel.ISupportInitialize)(this.cvolume)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -253,7 +253,7 @@ namespace WindowsFormsApp1
         private System.Windows.Forms.Button btn_open;
         internal System.Windows.Forms.Label lbl_volume;
         private System.Windows.Forms.ToolTip toolTip1;
-        internal Siticone.Desktop.UI.WinForms.SiticoneTrackBar cvolume;
         internal System.Windows.Forms.Timer timer1;
+        internal System.Windows.Forms.TrackBar cvolume;
     }
 }

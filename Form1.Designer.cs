@@ -57,15 +57,16 @@ namespace WindowsFormsApp1
             this.btn_stop = new System.Windows.Forms.Button();
             this.btn_play = new System.Windows.Forms.Button();
             this.btn_open = new System.Windows.Forms.Button();
-            this.cvolume = new Siticone.Desktop.UI.WinForms.SiticoneTrackBar();
             this.timer2 = new System.Windows.Forms.Timer(this.components);
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.btn_random = new System.Windows.Forms.Button();
             this.btn_hide = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
+            this.cvolume = new System.Windows.Forms.TrackBar();
             ((System.ComponentModel.ISupportInitialize)(this.player)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pic)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cvolume)).BeginInit();
             this.SuspendLayout();
             // 
             // player
@@ -367,19 +368,6 @@ namespace WindowsFormsApp1
             this.btn_open.UseVisualStyleBackColor = true;
             this.btn_open.Click += new System.EventHandler(this.btn_open_Click);
             // 
-            // cvolume
-            // 
-            this.cvolume.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.cvolume.HoverState.Parent = this.cvolume;
-            this.cvolume.Location = new System.Drawing.Point(288, 223);
-            this.cvolume.MouseWheelBarPartitions = 20;
-            this.cvolume.Name = "cvolume";
-            this.cvolume.Size = new System.Drawing.Size(123, 40);
-            this.cvolume.TabIndex = 30;
-            this.cvolume.ThumbColor = System.Drawing.Color.LimeGreen;
-            this.cvolume.Value = 0;
-            this.cvolume.Scroll += new System.Windows.Forms.ScrollEventHandler(this.cvolume_Scroll);
-            // 
             // timer2
             // 
             this.timer2.Tick += new System.EventHandler(this.timer2_Tick);
@@ -422,6 +410,17 @@ namespace WindowsFormsApp1
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
+            // cvolume
+            // 
+            this.cvolume.AutoSize = false;
+            this.cvolume.Location = new System.Drawing.Point(296, 230);
+            this.cvolume.Maximum = 100;
+            this.cvolume.Name = "cvolume";
+            this.cvolume.Size = new System.Drawing.Size(118, 27);
+            this.cvolume.TabIndex = 30;
+            this.cvolume.TickStyle = System.Windows.Forms.TickStyle.None;
+            this.cvolume.Value = 50;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -429,10 +428,10 @@ namespace WindowsFormsApp1
             this.BackColor = System.Drawing.Color.Black;
             this.BackgroundImage = global::WindowsFormsApp1.Properties.Resources.disraeli_gears_player_phone_copy;
             this.ClientSize = new System.Drawing.Size(467, 596);
+            this.Controls.Add(this.cvolume);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.btn_hide);
             this.Controls.Add(this.btn_random);
-            this.Controls.Add(this.cvolume);
             this.Controls.Add(this.btn_clear);
             this.Controls.Add(this.btn_close);
             this.Controls.Add(this.pic);
@@ -466,6 +465,7 @@ namespace WindowsFormsApp1
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pic)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cvolume)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -498,12 +498,12 @@ namespace WindowsFormsApp1
         private System.Windows.Forms.TextBox year;
         private System.Windows.Forms.Button btn_clear;
         internal System.Windows.Forms.ListBox Recent_list;
-        internal Siticone.Desktop.UI.WinForms.SiticoneTrackBar cvolume;
         private System.Windows.Forms.ToolTip toolTip1;
         internal System.Windows.Forms.Timer timer2;
         private System.Windows.Forms.Button btn_random;
         private System.Windows.Forms.Button btn_hide;
         private System.Windows.Forms.Button button2;
+        internal System.Windows.Forms.TrackBar cvolume;
     }
 }
 
